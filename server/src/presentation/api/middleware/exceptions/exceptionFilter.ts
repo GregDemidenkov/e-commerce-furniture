@@ -1,5 +1,8 @@
-import { ExceptionFilter, Catch, ArgumentsHost, } from '@nestjs/common';
-import { Response } from 'express';
+import { ExceptionFilter, Catch, ArgumentsHost, } from '@nestjs/common'
+import { Response } from 'express'
+
+import { Unauthorized } from 'src/core/common/exceptions/unauthorized'
+import { UserAlreadyExist } from 'src/core/user/exceptions/userAlreadyExist'
 
 
 @Catch()
@@ -11,9 +14,17 @@ export class HttpExceptionFilter implements ExceptionFilter {
         
         let status: number
         let message: string
-
-        message = "Internal serever error"
-        status = 500
+        console.log(exception)
+        if (exception instanceof UserAlreadyExist) {
+            message = exception.message
+            status = 400
+        } else if(exception instanceof Unauthorized) {
+            message = exception.message
+            status = 401
+        } else {
+            message = "Internal serever error"
+            status = 500
+        }
 
         response
         .status(status)
