@@ -1,0 +1,21 @@
+@use '@styles/colors';
+@use '@styles/vars';
+
+.nav {
+  
+  ul {
+    display: flex;
+    justify-content: space-around;
+
+    li {
+      width: 100px;
+      text-decoration: none;
+      list-style: none;
+      text-align: center;
+
+      a {
+        color: colors.$blue;
+      }
+    }
+  }
+}

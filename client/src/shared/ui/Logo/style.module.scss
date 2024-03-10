@@ -1,0 +1,16 @@
+@use '@styles/colors';
+
+.logo {
+  color: colors.$blue;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-weight: 500;
+
+  span {
+    padding: 4px;
+    border-radius: 6px;
+    background-color: colors.$blue;
+
+    color: colors.$white;
+  }
+}

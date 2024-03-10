@@ -1,0 +1,12 @@
+@use '@styles/colors';
+@use '@styles/vars';
+
+.body {
+  background-color: colors.$white;
+  font-family: vars.$font-primary !important;
+
+  main {
+    margin: 60px 0 20px;
+    min-height: calc(100vh - 80px);
+  }
+}

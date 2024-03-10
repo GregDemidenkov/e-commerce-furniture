@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 
-const inter = Inter({ subsets: ["latin"] });
+import { Header } from "@/widgets/header";
+import { Footer } from "@/widgets/footer";
+import { BaseLayout } from "@/shared/ui";
+import '@styles/globals.scss';
+
 
 export const metadata: Metadata = {
   title: "E-commerce Forniture",
@@ -14,8 +17,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
-    </html>
+    <BaseLayout
+      header={<Header />}
+      footer={<Footer />}
+    >
+      {children}
+    </BaseLayout>
   );
 }
