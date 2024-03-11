@@ -1,0 +1,42 @@
+@use '@styles/colors';
+@use '@styles/mixins';
+
+.authCard {
+  display: flex;
+  gap: 16px;
+
+  width: 750px;
+  height: 590px;
+
+  margin: 0 auto;
+
+  background-color: colors.$white;
+  border-radius: 40px;
+  box-shadow: rgba(0, 0, 0, 0.165) 0px -3px 24px;
+
+  .background {
+    width: 40%;
+    height: 100%;
+
+    border-bottom-left-radius: 40px;
+    border-top-left-radius: 40px;
+    background-image: url('../../../../public/images/auth-background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: -120px;
+  }
+
+  .content {
+    width: 60%;
+
+    padding: 20px;
+
+    h2 {
+      @include mixins.font(2.4rem, 500);
+      color: colors.$blue;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      text-align: center;
+    }
+  }
+}

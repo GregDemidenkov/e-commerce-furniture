@@ -15,7 +15,7 @@ export const Navbar: FC = () => {
           {
             mockNavLinks.map((link, i) => (
               <li>
-                <Link href='/'>{link}</Link>
+                <Link key={i} href='/'>{link}</Link>
               </li>
             ))
           }
