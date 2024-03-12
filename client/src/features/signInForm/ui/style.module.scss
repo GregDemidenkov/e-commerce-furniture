@@ -1,0 +1,28 @@
+@use '@styles/colors';
+
+.Form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 24px;
+
+  height: 100%;
+
+  padding-bottom: 74px;
+}
+
+.buttonBlock {
+  button {
+    margin: 0 auto;
+  }
+}
+
+.registrationRef {
+  font-size: 14px;
+  color: colors.$black;
+  text-align: center;
+
+  a {
+    color: colors.$blue;
+  }
+}

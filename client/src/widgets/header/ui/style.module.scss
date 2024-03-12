@@ -10,11 +10,10 @@
 
   width: 100%;
 
-  padding: 8px 0;
+  padding: 8px 0 0;
 
   background-color: inherit;
-  border-bottom: 1px solid colors.$gray-light;
-  // box-shadow: 0px 4px 6px -3px rgba(0, 0, 0, 0.607);
+  box-shadow: 0px 4px 6px -3px rgba(0, 0, 0, 0.607);
 
   .content {
     display: flex;
@@ -35,5 +34,8 @@
     width: 100%;
     border-top: 1px solid colors.$gray-light;
     padding: 12px 0;
+    // background-color: colors.$blue;
+    // background-color: #466278;
+    background-color: #577188;
   }
 }

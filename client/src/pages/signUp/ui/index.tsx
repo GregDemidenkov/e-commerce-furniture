@@ -1,20 +1,20 @@
 import { FC } from "react";
 
-import { SignInForm } from "@/features/signInForm";
+import { SignUpForm } from "@/features/signUpForm";
 import { AuthCard } from "@/shared/ui";
 
 import styles from './style.module.scss';
 
-export const SignInPage: FC = () => {
+export const SignUpPage: FC = () => {
 
   return (
     <section className={styles.section}>
       <AuthCard
-        type="sign-in"
-        label={'Вход'}
+        type="sign-up"
+        label={'Регистрация'}
       >
-        <SignInForm />
+        <SignUpForm />
       </AuthCard>
     </section>
   );
-};
+}

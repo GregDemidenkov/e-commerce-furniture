@@ -14,4 +14,11 @@ const Lora = localFont({
   fallback: ['system-ui', 'arial', 'serif'],
 });
 
-export { Lora, Inter };
+const Esti = localFont({
+  src: '../../../public/fonts/Gteestiprodisplay_medium.otf',
+  variable: '--font-lora',
+  display: 'swap',
+  fallback: ['system-ui', 'arial', 'serif'],
+});
+
+export { Lora, Inter, Esti };

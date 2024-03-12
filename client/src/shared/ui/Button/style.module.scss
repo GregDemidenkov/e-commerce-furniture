@@ -1,0 +1,25 @@
+@use '@styles/colors';
+
+.button {
+  display: block;
+
+  border: none;
+  outline: none;
+  border-radius: 6px;
+  padding: 12px 24px;
+
+  text-align: center;
+
+  cursor: pointer;
+
+  &-fill {
+    background-color: colors.$blue;
+    color: colors.$white;
+  }
+
+  &-bordered {
+    border: 1px solid colors.$blue;
+    background-color: inherit;
+    color: colors.$blue;
+  }
+}

@@ -2,10 +2,10 @@
 @use '@styles/vars';
 
 .nav {
-  
+
   ul {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
 
     li {
       width: 100px;
@@ -14,7 +14,8 @@
       text-align: center;
 
       a {
-        color: colors.$blue;
+        color: colors.$white;
+        letter-spacing: 1px;
       }
     }
   }

@@ -1,6 +1,6 @@
 import clsx from "clsx";
 
-import { Inter, Lora } from "@/shared/styles/fonts";
+import { Inter, Lora, Esti } from "@/shared/styles/fonts";
 import styles from './style.module.scss';
 
 export const BaseLayout = ({
@@ -15,7 +15,7 @@ export const BaseLayout = ({
 
   return (
     <html lang="ru">
-      <body className={clsx(Inter.variable, Lora.variable, styles.body)}>
+      <body className={clsx(Inter.variable, Lora.variable, Esti.variable, styles.body)}>
         { header }
 
         <main>{children}</main>

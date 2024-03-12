@@ -1,0 +1,14 @@
+@use '@styles/colors';
+
+.input {
+  width: 100%;
+  background-color: colors.$white;
+  color: colors.$black;
+  padding: 8px;
+
+  &-underline {
+    border: none;
+    outline: none;
+    border-bottom: 1px solid colors.$blue;
+  }
+}

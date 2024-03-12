@@ -1,7 +1,7 @@
+import { SignUpPage } from "@/pages/signUp";
+
 export default function SignUp() {
   return (
-    <main>
-      SignUp
-    </main>
+    <SignUpPage />
   );
 }

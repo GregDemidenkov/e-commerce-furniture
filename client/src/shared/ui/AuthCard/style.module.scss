@@ -20,16 +20,24 @@
 
     border-bottom-left-radius: 40px;
     border-top-left-radius: 40px;
-    background-image: url('../../../../public/images/auth-background.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: -120px;
+
+    &-sign-in {
+      background-image: url('../../../../public/images/auth-back-sign-in.jpg');
+      background-position: -120px;
+    }
+
+    &-sign-up {
+      background-image: url('../../../../public/images/auth-back-sign-up.jpg');
+      background-position: -260px;
+    }
   }
 
   .content {
     width: 60%;
 
-    padding: 20px;
+    padding: 40px 56px 40px 40px;
 
     h2 {
       @include mixins.font(2.4rem, 500);
