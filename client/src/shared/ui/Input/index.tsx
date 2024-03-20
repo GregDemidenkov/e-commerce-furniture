@@ -1,17 +1,18 @@
 'use client';
 
-import { FC } from "react";
+import { ChangeEvent, FC } from "react";
 import clsx from "clsx";
+import InputMask from 'react-input-mask';
 
 import styles from './style.module.scss';
 
 type InputProps = {
   style: 'bordered' | 'underline',
   id: string,
-  type: string,
-  value?: string,
-  onChange?: () => void,
-  error?: string,
+  type: 'text' | 'email' | 'date' | 'password',
+  value: any,
+  onChange?: (e: ChangeEvent<HTMLInputElement>) => void,
+  error?: string | null,
   placeholder?: string,
   className?: string,
   label?: string,
@@ -39,6 +40,57 @@ export const Input: FC<InputProps> = ({
           styles[`input-wrapper-${labelStyle}`]
         )}>
         <label htmlFor={id}>{label}</label>
+        {
+          type === 'date' ?
+          <InputMask 
+            id={id}
+            value={value}
+            onChange={onChange}
+            placeholder={placeholder || ""}
+            className={clsx(
+              styles[`input`],
+              styles[`input-${style}`],
+              className
+            )}
+            mask="99.99.9999"
+            maskChar={'_'}
+          />
+        :
+          <input
+            type={type}
+            id={id}
+            value={value}
+            onChange={onChange}
+            placeholder={placeholder || ""}
+            className={clsx(
+              styles[`input`],
+              styles[`input-${style}`],
+              className
+            )}
+          />
+        }
+      </div>
+    );
+  }
+
+  return (
+    <div className={styles[`input-wrapper`]}>
+      {
+        type === 'date' ?
+        <InputMask 
+          id={id}
+          value={value}
+          onChange={onChange}
+          placeholder={placeholder || ""}
+          className={clsx(
+            styles[`input`],
+            styles[`input-${style}`],
+            className
+          )}
+          mask="99.99.9999"
+          maskChar={'_'}
+        />
+      :
         <input
           type={type}
           id={id}
@@ -51,22 +103,8 @@ export const Input: FC<InputProps> = ({
             className
           )}
         />
-      </div>
-    );
-  }
-
-  return (
-    <input
-      type={type}
-      id={id}
-      value={value}
-      onChange={onChange}
-      placeholder={placeholder || ""}
-      className={clsx(
-        styles[`input`],
-        styles[`input-${style}`],
-        className
-      )}
-    />
+      }
+      <p className={styles.error}>{error}</p>
+    </div>
   );
 };
