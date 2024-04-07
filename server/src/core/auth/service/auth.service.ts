@@ -30,7 +30,7 @@ export class AuthService {
     async registration(dto: RegistrationDto) {
         const user = await this.authDao.findUserByEmail(dto.email)
         if (user) {
-            throw new UserAlreadyExist("User with this email already registered")
+            throw new UserAlreadyExist("Пользователь с такой почтой уже существует")
         }
 
         dto.password = await this.hashPassword(dto.password)
@@ -41,12 +41,12 @@ export class AuthService {
     async login(dto: LoginDto): Promise<LoginResponseDto> {
         const user = await this.authDao.findUserByEmail(dto.email)
         if (!user) {
-            throw new UserNotExist("User with this email is not registered")
+            throw new UserNotExist("Пользователя с такой почтой не существует")
         }
 
         const validatePassword = await bcrypt.compare(dto.password, user.password)
         if (!validatePassword) {
-            throw new InvalidPassword("Invalid password")
+            throw new InvalidPassword("Неверный пароль")
         }
 
         const accessToken = jwt.sign({id: user._id}, process.env.JWT_SECRET, {expiresIn: "10m"})

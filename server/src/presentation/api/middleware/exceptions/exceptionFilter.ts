@@ -2,7 +2,9 @@ import { ExceptionFilter, Catch, ArgumentsHost, } from '@nestjs/common'
 import { Response } from 'express'
 
 import { Unauthorized } from 'src/core/common/exceptions/unauthorized'
+import { InvalidPassword } from 'src/core/user/exceptions/invalidPassword'
 import { UserAlreadyExist } from 'src/core/user/exceptions/userAlreadyExist'
+import { UserNotExist } from 'src/core/user/exceptions/userNotExist'
 
 
 @Catch()
@@ -16,6 +18,14 @@ export class HttpExceptionFilter implements ExceptionFilter {
         let message: string
         console.log(exception)
         if (exception instanceof UserAlreadyExist) {
+            message = exception.message
+            status = 400
+        }
+        else if (exception instanceof UserNotExist) {
+            message = exception.message
+            status = 400
+        }
+        else if (exception instanceof InvalidPassword) {
             message = exception.message
             status = 400
         } else if(exception instanceof Unauthorized) {
