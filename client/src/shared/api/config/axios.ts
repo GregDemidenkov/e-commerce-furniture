@@ -1,6 +1,6 @@
 import axios from "axios";
 
-import AuthService from "../services/authService";
+import TokenService from "../services/TokenService";
 import { getCookie, removeCookie, setCookie } from "../../utils/cookie";
 
 
@@ -23,7 +23,7 @@ protectedAxios.interceptors.response.use(
         if (error.response.status === 401 && !originalRequest._retry) {
             originalRequest._retry = true;
 
-            const result = await AuthService.refreshToken();
+            const result = await TokenService.refreshToken();
             const token = result.data.accessToken;
             setCookie('accessToken', token);
             

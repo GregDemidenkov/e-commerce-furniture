@@ -3,37 +3,59 @@
 import { FC, useEffect, useState } from "react";
 import Link from "next/link";
 
+import { registration, clearMessage } from "@/entities/auth";
 import { Button, Input } from "@/shared/ui";
 import { AUTH_ROUTES } from "@/shared/routes";
+import { useAppDispatch, useAppSelector } from "@/shared/utils/storeHooks";
+import redirectTo from "@/shared/utils/redirect";
 import { FormState, FormStateErrors } from "../model/types";
 import isValidForm from "../utils/isValidForm";
 
 import styles from './style.module.scss';
 
 export const SignUpForm: FC = () => {
+  const dispatch = useAppDispatch();
+  const { message, isLoading } = useAppSelector(
+    (state) => state.auth
+  );
   const [formState, setFormState] = useState<FormState>({} as FormState);
   const [errors, setErrors] = useState<FormStateErrors | null>(null);
 
   const validate = () => {
     const newErrors = isValidForm(formState);
+    setErrors(newErrors);
 
-    if(newErrors) {
-      setErrors(newErrors);
-    }
+    if(!newErrors) return false;
+    return true;
   };
 
   const onSubmit = () => {
-    validate();
-  }
+    if(!validate()) {
+      dispatch(registration(formState));
+    }
+  };
 
   useEffect(() => {
     if(errors) {
       validate();
     }
-  }, [formState])
 
+    return () => {
+      dispatch(clearMessage());
+    }
+  }, [formState]);
+
+  if(message.type === 'success' && !isLoading) redirectTo(AUTH_ROUTES.signIn);
+  console.log(message)
   return (
     <form action="" className={styles.Form}>
+      {
+        message.type === 'error' &&
+        <div className={styles.error}>
+          <p>{message.text}</p>
+        </div>
+      }
+
       <Input
         style='underline'
         id="sign-up-first-name"

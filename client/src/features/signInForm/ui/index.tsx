@@ -1,26 +1,46 @@
 'use client';
 
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import Link from "next/link";
 
+import { login, clearMessage } from "@/entities/auth";
 import { Button, Input } from "@/shared/ui";
 import { AUTH_ROUTES } from "@/shared/routes";
 import redirectTo from "@/shared/utils/redirect";
+import { useAppDispatch, useAppSelector } from "@/shared/utils/storeHooks";
+import { getCookie } from "@/shared/utils/cookie";
 
 import { FormState } from "../model/types";
 
 import styles from './style.module.scss';
 
 export const SignInForm: FC = () => {
+  const dispatch = useAppDispatch();
+  const { message, isLoading } = useAppSelector(
+    (state) => state.auth
+  );
   const [formState, setFormState] = useState<FormState>({} as FormState);
-  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    return () => {
+      dispatch(clearMessage());
+    }
+  }, []);
 
   const onSubmit = () => {
-    redirectTo("/");
-  }
-  
+    dispatch(login(formState));
+  };
+
+  if(getCookie('accessToken') && !isLoading) redirectTo("/");
+
   return (
     <form action="" className={styles.Form}>
+      {
+        message.type === 'error' &&
+        <div className={styles.error}>
+          <p>{message.text}</p>
+        </div>
+      }
       <div>
         <Input
           style='underline'

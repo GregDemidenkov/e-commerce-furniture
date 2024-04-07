@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Header } from "@/widgets/header";
 import { Footer } from "@/widgets/footer";
 import { BaseLayout } from "@/shared/ui";
+import { StoreProvider } from "./store/StoreProvider";
 import '@styles/globals.scss';
 
 
@@ -17,11 +18,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <BaseLayout
-      header={<Header />}
-      footer={<Footer />}
-    >
-      {children}
-    </BaseLayout>
+    <StoreProvider>
+      <BaseLayout
+        header={<Header />}
+        footer={<Footer />}
+      >
+        {children}
+      </BaseLayout>
+    </StoreProvider>
   );
 }

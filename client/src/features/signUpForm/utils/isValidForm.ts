@@ -19,8 +19,8 @@ export default (formState: FormState) => {
   if (!Validator.dateValidator(formState.birthday)) {
     newErrors.birthday = 'Некорректная дата рождения';
   }
-
-  if (newErrors) {
+  
+  if (Object.keys(newErrors).length !== 0) {
     return newErrors;
   } else {
     return null;

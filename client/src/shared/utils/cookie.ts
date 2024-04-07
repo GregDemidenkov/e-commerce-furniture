@@ -9,6 +9,7 @@ export const setCookie = (
   usrin: any,
   domain = process.env.NEXT_PUBLIC_API_CLIENT_DOMAIN
   ) => {
+  console.log(cookiename, usrin, domain)
   Cookies.set(cookiename, usrin, {
     expires: 366, //day
     secure: true,

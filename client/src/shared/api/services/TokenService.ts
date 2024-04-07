@@ -2,7 +2,7 @@ import { getCookie } from "@/shared/utils/cookie";
 import protectedAxios, { axiosApi } from "../config/axios";
 import { AUTH_PATH } from "../constants";
 
-class AuthService {
+class TokenService {
 
     authUrl = AUTH_PATH;
 
@@ -18,4 +18,4 @@ class AuthService {
 }
 
 
-export default new AuthService();
+export default new TokenService();
