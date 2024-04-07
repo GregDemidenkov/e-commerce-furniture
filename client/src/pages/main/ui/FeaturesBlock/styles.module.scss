@@ -1,0 +1,28 @@
+.featuresBlock {
+  display: flex;
+  justify-content: space-around;
+
+  &_el {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__img {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 116px;
+      height: 116px;
+      background-color: #daecff;
+      border-radius: 50%;
+    }
+
+    h3 {
+      font-weight: 500;
+      font-size: 22px;
+      text-align: center;
+      margin-top: 2rem;
+    }
+  }
+}
