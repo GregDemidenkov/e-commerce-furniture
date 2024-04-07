@@ -1,7 +1,8 @@
 import { FC } from 'react';
 
-import { Navbar } from './Navbar';
+import { HeaderNavbar } from '@/features/headerNavbar';
 import { Container, Logo } from '@/shared/ui';
+import { CatalogNavbar } from './CatalogNavbar';
 
 import styles from './style.module.scss';
 import Link from 'next/link';
@@ -16,20 +17,21 @@ export const Header: FC = () => {
         <div className={styles.content}>
           <Logo />
 
-          <div className={styles.authBlock}>
-            {
+          {/* <div className={styles.authBlock}> */}
+            {/* {
               mockisAuth 
               ?
                 <>Личный кабинет</>
               :
                 <Link className={styles.signIn} href='/'>Войти</Link>
-            }
-          </div>
+            } */}
+            <HeaderNavbar />
+          {/* </div> */}
         </div>
       </Container>
 
       <div className={styles.navbar}>
-        <Navbar />
+        <CatalogNavbar />
       </div>
     </header>
   );

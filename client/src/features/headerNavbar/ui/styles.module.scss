@@ -1,0 +1,49 @@
+@use '@styles/colors';
+
+.headerNav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+
+  font-size: 16px;
+  color: colors.$black;
+
+  &_el {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+
+    a {
+      display: contents;
+      font-weight: 500;
+      color: colors.$black;
+    }
+
+    svg {
+      width: 22px;
+      height: 22px;
+      margin-right: 4px;
+  
+      path {
+        stroke: colors.$black;
+      }
+    }
+
+    &:hover {
+      color: colors.$blue;
+
+      a {
+        color: colors.$blue;
+      }
+
+      svg {    
+        path {
+          stroke: colors.$blue;
+        }
+      }
+  
+    }
+  }
+}

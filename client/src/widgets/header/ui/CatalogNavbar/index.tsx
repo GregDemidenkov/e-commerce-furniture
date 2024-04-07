@@ -6,7 +6,7 @@ import { Container } from "@/shared/ui";
 
 const mockNavLinks = ['Диваны', 'Кровати', 'Шкафы', 'Столы', 'Стулья'];
 
-export const Navbar: FC = () => {
+export const CatalogNavbar: FC = () => {
 
   return (
     <nav className={styles.nav}>

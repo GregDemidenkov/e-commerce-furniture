@@ -46,7 +46,7 @@ export const SignUpForm: FC = () => {
   }, [formState]);
 
   if(message.type === 'success' && !isLoading) redirectTo(AUTH_ROUTES.signIn);
-  console.log(message)
+
   return (
     <form action="" className={styles.Form}>
       {

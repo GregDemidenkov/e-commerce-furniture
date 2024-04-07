@@ -1,6 +1,8 @@
 @use '@styles/colors';
 
 .logo {
+  display: flex;
+  align-items: center;
   color: colors.$blue;
   text-transform: uppercase;
   letter-spacing: 4px;
