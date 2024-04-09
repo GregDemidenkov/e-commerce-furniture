@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
-import { getCookie } from './shared/utils/cookie';
+
 
 export async function middleware(request: NextRequest) {
   const url = request.nextUrl.clone();
@@ -14,4 +14,9 @@ export async function middleware(request: NextRequest) {
     url.pathname = '/';
     return NextResponse.redirect(url);
   }
-}
+
+  if(url.pathname === '/profile' && request.cookies.get('accessToken')) {
+    url.pathname = '/profile/settings';
+    return NextResponse.redirect(url);
+  }
+};

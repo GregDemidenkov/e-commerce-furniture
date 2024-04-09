@@ -31,7 +31,11 @@ export const BaseLayout = ({
       <body className={clsx(Inter.variable, Lora.variable, Esti.variable, styles.body)}>
         { header }
 
-        <main>{children}</main>
+        <main
+          className={window.location.pathname.startsWith('/profile') ? styles.profileMain : ""}
+        >
+          { children }
+        </main>
 
         { footer }
       </body>

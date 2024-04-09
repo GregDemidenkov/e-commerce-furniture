@@ -1,0 +1,60 @@
+@use '@styles/colors';
+@use '@styles/vars';
+
+.sideNavbar {
+  position: absolute;
+  left: 0;
+  height: 100vh;
+  background-color: colors.$white;
+  padding: 4rem 0 0;
+  border-right: 1px solid colors.$gray-light;
+}
+
+.nav {
+  position: sticky;
+  top: 180px;
+  right: 0;
+  left: 100%;
+  padding: 0;
+  width: 32rem;
+  height: 400px;
+  
+  h3 {
+    text-align: left;
+    color: colors.$black;
+    font-family: vars.$font-secondary;
+    font-weight: 500;
+    letter-spacing: 3px;
+    padding-left: 2rem;
+  }
+
+  &_links {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+
+    &__link {
+      list-style: none;
+
+      a {
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        gap: 2rem;
+        height: 100%;
+        padding: 2rem;
+        color: colors.$black;
+
+        svg {
+          width: 30px;
+          height: 30px;
+        }
+      }
+
+      &:hover {
+        background-color: #f6f7f8;
+        border-right: 1px solid colors.$gray-light;
+      }
+    }
+  }
+}
