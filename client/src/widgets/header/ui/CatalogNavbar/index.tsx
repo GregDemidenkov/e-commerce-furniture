@@ -1,8 +1,9 @@
 import { FC } from "react";
+import Link from "next/link";
+
+import { Container } from "@/shared/ui";
 
 import styles from './style.module.scss';
-import Link from "next/link";
-import { Container } from "@/shared/ui";
 
 const mockNavLinks = ['Диваны', 'Кровати', 'Шкафы', 'Столы', 'Стулья'];
 

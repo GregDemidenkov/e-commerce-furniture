@@ -1,13 +1,12 @@
 import { FC } from 'react';
+import Link from 'next/link';
 
 import { HeaderNavbar } from '@/features/headerNavbar';
 import { Container, Logo } from '@/shared/ui';
+import { MAIN_PATH } from '@/shared/routes';
 import { CatalogNavbar } from './CatalogNavbar';
 
 import styles from './style.module.scss';
-import Link from 'next/link';
-
-const mockisAuth = false;
 
 export const Header: FC = () => {
 
@@ -15,18 +14,10 @@ export const Header: FC = () => {
     <header className={styles.header}>
       <Container>
         <div className={styles.content}>
-          <Logo />
-
-          {/* <div className={styles.authBlock}> */}
-            {/* {
-              mockisAuth 
-              ?
-                <>Личный кабинет</>
-              :
-                <Link className={styles.signIn} href='/'>Войти</Link>
-            } */}
-            <HeaderNavbar />
-          {/* </div> */}
+          <Link href={MAIN_PATH}>
+            <Logo />
+          </Link>
+          <HeaderNavbar />
         </div>
       </Container>
 

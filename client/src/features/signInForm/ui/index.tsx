@@ -5,7 +5,7 @@ import Link from "next/link";
 
 import { login, clearMessage } from "@/entities/auth";
 import { Button, Input } from "@/shared/ui";
-import { AUTH_ROUTES } from "@/shared/routes";
+import { AUTH_ROUTES, MAIN_PATH } from "@/shared/routes";
 import redirectTo from "@/shared/utils/redirect";
 import { useAppDispatch, useAppSelector } from "@/shared/utils/storeHooks";
 import { getCookie } from "@/shared/utils/cookie";
@@ -31,7 +31,7 @@ export const SignInForm: FC = () => {
     dispatch(login(formState));
   };
 
-  if(getCookie('accessToken') && !isLoading) redirectTo("/");
+  if(getCookie('accessToken') && !isLoading) redirectTo(MAIN_PATH);
 
   return (
     <form action="" className={styles.Form}>

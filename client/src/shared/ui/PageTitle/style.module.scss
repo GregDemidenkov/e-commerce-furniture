@@ -1,0 +1,12 @@
+@use '@styles/colors';
+@use '@styles/vars';
+
+.title {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 28px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: colors.$black;
+  font-family: vars.$font-title;
+}

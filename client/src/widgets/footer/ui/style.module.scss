@@ -3,6 +3,7 @@
 .footer {
   background-color: colors.$blue;
   padding: 16px 0;
+  z-index: 1000;
 
   p {
     color: colors.$white;

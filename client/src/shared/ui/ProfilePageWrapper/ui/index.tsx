@@ -1,7 +1,7 @@
 'use client';
 
 import { useRef } from 'react';
-import { Container } from '../Container';
+import { Container } from '../../Container';
 import { SideNavbar } from './SideNavbar';
 import styles from './styles.module.scss';
 

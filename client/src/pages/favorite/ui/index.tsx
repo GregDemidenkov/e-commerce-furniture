@@ -1,10 +1,10 @@
 import { PageTitle, ProfilePageWrapper } from "@/shared/ui"
 
-export const SettingsPage = () => {
+export const FavoritePage = () => {
   return (
     <ProfilePageWrapper>
       <div>
-        <PageTitle title={'Настройки'}/>
+        <PageTitle title={'Избранное'}/>
       </div>
     </ProfilePageWrapper>
   );

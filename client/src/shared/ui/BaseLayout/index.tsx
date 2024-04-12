@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect } from "react";
 import clsx from "clsx";
 
 import { Inter, Lora, Esti } from "@/shared/styles/fonts";
@@ -7,7 +8,6 @@ import styles from './style.module.scss';
 import { useAppDispatch } from "@/shared/utils/storeHooks";
 import { getCookie } from "@/shared/utils/cookie";
 import { auth } from "@/entities/auth";
-import { useEffect } from "react";
 
 export const BaseLayout = ({
   header,
@@ -18,11 +18,11 @@ export const BaseLayout = ({
   children: React.ReactNode,
   footer: React.ReactNode
 }) => {
-  const dispatch = useAppDispatch()
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     if (getCookie('accessToken')) {
-      dispatch(auth())
+      dispatch(auth());
     }
   }, [])
 
@@ -31,9 +31,7 @@ export const BaseLayout = ({
       <body className={clsx(Inter.variable, Lora.variable, Esti.variable, styles.body)}>
         { header }
 
-        <main
-          className={window.location.pathname.startsWith('/profile') ? styles.profileMain : ""}
-        >
+        <main>
           { children }
         </main>
 

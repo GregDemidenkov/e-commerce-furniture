@@ -1,10 +1,13 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
-import styles from './styles.module.scss';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { SVG } from '../../SVG';
+import clsx from 'clsx';
 
+import { SVG } from '../../../SVG';
+import navData from '../../model/navData';
+
+import styles from './styles.module.scss';
 
 export const SideNavbar = ({contentRef}: {contentRef: any}) => {
   const [width, setWidth] = useState(0);
@@ -27,31 +30,31 @@ export const SideNavbar = ({contentRef}: {contentRef: any}) => {
     };
   }, []);
 
-
-
+  const isActiveLink = (path: string) => {
+    return location.pathname === path;
+  };
+  console.log(1)
   return (
     <aside className={styles.sideNavbar} style={{width: width}}>
       <nav className={styles.nav}>
         <h3>Личный кабинет</h3>
 
         <ul className={styles.nav_links}>
-          <li className={styles.nav_links__link}>
-            <Link href={'/profile/settings'}>
-              <SVG type='profile'/> <span>Настройки</span>
-            </Link>
-          </li>
-
-          <li className={styles.nav_links__link}>
-            <Link href={'/profile/settings'}>
-              <SVG type='profile'/> <span>Избранное</span>
-            </Link>
-          </li>
-
-          <li className={styles.nav_links__link}>
-            <Link href={'/profile/settings'}>
-              <SVG type='profile'/> <span>История заказов</span>
-            </Link>
-          </li>
+          {
+            navData.map((link, i) => (
+              <li
+                key={i}
+                className={clsx(
+                  styles.nav_links__link,
+                  isActiveLink(link.href) ? styles.activeLink : ''
+                )}
+              >
+                <Link href={link.href}>
+                  <SVG type={link.icon}/> <span>{link.title}</span>
+                </Link>
+              </li>
+            ))
+          }
         </ul>
       </nav>
     </aside>

@@ -12,7 +12,7 @@
 
 .nav {
   position: sticky;
-  top: 180px;
+  top: 188px;
   right: 0;
   left: 100%;
   padding: 0;
@@ -22,8 +22,8 @@
   h3 {
     text-align: left;
     color: colors.$black;
-    font-family: vars.$font-secondary;
-    font-weight: 500;
+    font-family: vars.$font-primary;
+    font-weight: 700;
     letter-spacing: 3px;
     padding-left: 2rem;
   }
@@ -49,11 +49,30 @@
           width: 30px;
           height: 30px;
         }
+
+        span {
+          font-family: vars.$font-primary;
+          font-weight: 500;
+        }
+
       }
 
       &:hover {
         background-color: #f6f7f8;
         border-right: 1px solid colors.$gray-light;
+      }
+    }
+
+    .activeLink {
+      a {
+
+        span {
+          color: colors.$blue;
+        }
+
+        svg path {
+          stroke: colors.$blue;
+        }
       }
     }
   }

@@ -5,4 +5,5 @@ export { Input } from './Input';
 export { Button } from './Button';
 export { AuthCard } from './AuthCard';
 export { SVG } from './SVG';
-export { ProfilePageWrapper } from './ProfilePageWrapper';
+export { ProfilePageWrapper } from './ProfilePageWrapper/ui';
+export { PageTitle } from './PageTitle';

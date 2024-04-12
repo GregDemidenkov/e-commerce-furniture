@@ -1,10 +1,10 @@
 import { PageTitle, ProfilePageWrapper } from "@/shared/ui"
 
-export const SettingsPage = () => {
+export const OrderHistoryPage = () => {
   return (
     <ProfilePageWrapper>
       <div>
-        <PageTitle title={'Настройки'}/>
+        <PageTitle title={'История заказов'}/>
       </div>
     </ProfilePageWrapper>
   );
