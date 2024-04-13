@@ -1,0 +1,36 @@
+@use '@styles/colors';
+
+.genderSwitchWrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 4px;
+
+  label {
+    color: colors.$black;
+    font-weight: 600;
+  }
+
+  &_cases {
+    display: flex;
+    gap: 16px;
+
+    &__gender {
+      font-size: 16px;
+      background-color: colors.$white;
+      padding: 10px 24px;
+      border-radius: 8px;
+      transition: all ease-in-out .2s;
+      cursor: pointer;
+
+      &:hover {
+        background-color: colors.$blue;
+        color: colors.$white;
+      }
+    }
+
+    &__genderActive {
+      background-color: colors.$blue;
+      color: colors.$white;
+    }
+  }
+}
