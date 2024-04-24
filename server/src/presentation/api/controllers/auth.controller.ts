@@ -6,8 +6,9 @@ import { IdDto } from "src/core/common/dto/id.dto"
 import { LoginDto } from "src/core/auth/dto/login.dto"
 import { RegistrationDto } from "src/core/auth/dto/registration.dto"
 import { TokenDto } from "src/core/auth/dto/token.dto"
+import { ApiTags } from "@nestjs/swagger"
 
-
+@ApiTags('Auth')
 @Controller('auth')
 export class AuthController {
 
