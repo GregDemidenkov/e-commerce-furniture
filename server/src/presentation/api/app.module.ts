@@ -6,6 +6,7 @@ import config from './config';
 
 import { AuthModule } from './modules/auth.module';
 import { UserModule } from './modules/user.module';
+import { CategoriesModule } from './modules/category.module';
 
 
 @Module({
@@ -24,6 +25,7 @@ import { UserModule } from './modules/user.module';
         // Модули
         AuthModule,
         UserModule,
+        CategoriesModule
     ]
 })
 

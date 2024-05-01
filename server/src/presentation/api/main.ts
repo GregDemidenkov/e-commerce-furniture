@@ -11,6 +11,8 @@ export default async () => {
 
     const port = configService.get<number>('port')
     const prefix = configService.get<string>('dbBasePrefix')
+    const dbUrl = configService.get<string>('dbUrl')
+    console.log(dbUrl)
 
     app.setGlobalPrefix(prefix)
     app.useGlobalFilters(new HttpExceptionFilter());
