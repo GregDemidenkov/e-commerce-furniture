@@ -1,0 +1,105 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+.local/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# PyInstaller
+#  Usually these files are written by a python script from a template
+#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*,cover
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+
+# Sphinx documentation
+docs/_build/
+docs/documents/
+
+# PyBuilder
+target/
+
+# Docker
+Dockerfile
+server/docker-compose.yml
+docker-compose.override.yml
+server/docker/docker-compose.prod.yml
+
+# JetBrains
+.idea/
+
+# kira-release script
+release.config.js
+.git
+.dockerignore
+.gitignore
+
+.cache/
+.storybook-out/
+.DS_Store
+.venv
+*.egg-info
+*.pyc
+*.db
+*.pid
+MANIFEST
+test.conf
+package.json
+/.artifacts
+/coverage/
+/cover
+/build
+/env
+/tmp
+node_modules
+/wheelhouse
+/test_cli/
+*.iml
+.pytest_cache/
+.vscode/tags
+junit.xml
+*.codestyle.xml
+package-lock.json
+
+# Frontend source folder
+frontend/

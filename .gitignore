@@ -2,6 +2,7 @@
 /server/dist
 /server/build
 /server/.env
+/server/environments
 
 /client/node_modules
 /client/.next
