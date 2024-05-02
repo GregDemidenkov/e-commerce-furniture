@@ -21,4 +21,11 @@ const Esti = localFont({
   fallback: ['system-ui', 'arial', 'serif'],
 });
 
-export { Lora, Inter, Esti };
+const Roboto = localFont({
+  src: '../../../public/fonts/Roboto.ttf',
+  variable: '--font-roboto',
+  display: 'swap',
+  fallback: ['system-ui', 'arial', 'sans-serif'],
+});
+
+export { Lora, Inter, Esti, Roboto };

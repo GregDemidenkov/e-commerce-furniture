@@ -1,0 +1,1 @@
+export { ProductControllerBlock } from './ui/productControllerBlock';

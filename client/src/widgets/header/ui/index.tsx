@@ -2,7 +2,7 @@ import { FC } from 'react';
 import Link from 'next/link';
 
 import { HeaderNavbar } from '@/features/headerNavbar';
-import { Container, Logo } from '@/shared/ui';
+import { Container, Logo, SVG } from '@/shared/ui';
 import { MAIN_PATH } from '@/shared/routes';
 import { CatalogNavbar } from './CatalogNavbar';
 
@@ -14,9 +14,15 @@ export const Header: FC = () => {
     <header className={styles.header}>
       <Container>
         <div className={styles.content}>
-          <Link href={MAIN_PATH}>
-            <Logo />
-          </Link>
+          <div className={styles.content_left}>
+            <Link href={MAIN_PATH}>
+              <Logo />
+            </Link>
+            <Link className={styles.content_left__catalogLink} href={'/catalog'}>
+              <SVG type="catalog" />
+              <span>Каталог</span>
+            </Link>
+          </div>
           <HeaderNavbar />
         </div>
       </Container>

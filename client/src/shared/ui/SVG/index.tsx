@@ -3,6 +3,7 @@ import CartSVG from '@public/images/icons/cart.svg';
 import HeartSVG from '@public/images/icons/heart.svg';
 import OrderHistorySVG from '@public/images/icons/order-history.svg';
 import SettingsSVG from '@public/images/icons/settings.svg';
+import CatalogSVG from '@public/images/icons/catalog.svg';
 
 export const SVG = ({ type }: { type: string }) => {
   switch (type) {
@@ -16,6 +17,8 @@ export const SVG = ({ type }: { type: string }) => {
       return <OrderHistorySVG />;
     case 'settings':
       return <SettingsSVG />;
+    case 'catalog':
+      return <CatalogSVG />;
     default:
       return null;
   }

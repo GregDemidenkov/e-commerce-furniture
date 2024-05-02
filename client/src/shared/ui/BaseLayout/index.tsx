@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 import clsx from "clsx";
 
-import { Inter, Lora, Esti } from "@/shared/styles/fonts";
+import { Inter, Lora, Esti, Roboto } from "@/shared/styles/fonts";
 import styles from './style.module.scss';
 import { useAppDispatch } from "@/shared/utils/storeHooks";
 import { getCookie } from "@/shared/utils/cookie";
@@ -28,7 +28,7 @@ export const BaseLayout = ({
 
   return (
     <html lang="ru">
-      <body className={clsx(Inter.variable, Lora.variable, Esti.variable, styles.body)}>
+      <body className={clsx(Inter.variable, Lora.variable, Esti.variable, Roboto.variable, styles.body)}>
         { header }
 
         <main>

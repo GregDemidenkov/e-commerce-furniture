@@ -1,0 +1,46 @@
+@use '@styles/colors';
+@use '@styles/vars';
+
+.productControllerBlock {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+  height: min-content;
+  padding: 32px;
+  border: 2px solid colors.$blue;
+  border-radius: 6px;
+
+  &_price {
+    font-size: 36px;
+    font-family: vars.$font-secondary;
+    font-weight: 900;
+    letter-spacing: 2px;
+    color: colors.$blue;
+  }
+
+  &_count {
+    font-size: 20px;
+    font-family: vars.$font-secondary;
+    letter-spacing: 2px;
+  }
+
+  &_buttons {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 32px;
+
+    svg {
+      width: 48px;
+      height: 48px;
+
+      path {
+        stroke: colors.$blue;
+      }
+    }
+
+    button {
+      width: 100%;
+    }
+  }
+}
