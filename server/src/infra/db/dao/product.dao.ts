@@ -24,7 +24,7 @@ export class ProductDao {
       let result;
       
       if (dto.category === "default" && dto.sort === "default") {
-        result = this.productModel.find()
+        result = this.productModel.find().sort({count: -1})
       } else if(dto.category === 'default' && dto.sort !== "default") {
         result = this.productModel.find().sort({'price': dto.sort === "asc" ? 1 : -1})
       } else if(dto.category !== 'default' && dto.sort !== "default") {
