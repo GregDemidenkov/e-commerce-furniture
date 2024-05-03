@@ -1,0 +1,39 @@
+@use '@styles/colors';
+@use '@styles/vars';
+
+.section {
+  margin: 64px 0;
+}
+
+.catalogContent {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  
+  &_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__title {
+      font-size: 42px;
+      font-weight: 700;
+      line-height: 48px;
+      letter-spacing: 4px;
+      color: colors.$black;
+      font-family: vars.$font-roboto;
+    }
+  }
+
+  &_list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 48px;
+
+    li {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+  }
+}

@@ -14,3 +14,8 @@ export interface Product {
   price: number,
   count: number
 };
+
+export interface SortParams {
+  category?: string,
+  sort?: string
+};

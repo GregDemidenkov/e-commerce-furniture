@@ -17,4 +17,8 @@ export const productSerialize = (data: any): Product => {
     price: data.price,
     count: data.count
   } as Product;
+};
+
+export const productsSerialize = (data: any): Product[] => {
+  return data.map((item: any) => productSerialize(item));
 }

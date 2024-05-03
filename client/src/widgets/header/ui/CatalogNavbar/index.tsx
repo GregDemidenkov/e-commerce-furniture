@@ -1,22 +1,25 @@
-import { FC } from "react";
 import Link from "next/link";
 
+import { Category } from "@/entities/category/model/types";
+import { CATALOG_ROUTES } from "@/shared/routes";
 import { Container } from "@/shared/ui";
 
 import styles from './style.module.scss';
 
-const mockNavLinks = ['Диваны', 'Кровати', 'Шкафы', 'Столы', 'Стулья'];
-
-export const CatalogNavbar: FC = () => {
+export const CatalogNavbar = ({ categories }: { categories: Category[] }) => {
 
   return (
     <nav className={styles.nav}>
       <Container>
         <ul>
           {
-            mockNavLinks.map((link, i) => (
-              <li>
-                <Link key={i} href='/'>{link}</Link>
+            categories.map((link) => (
+              <li key={link.id}>
+                <Link
+                  href={CATALOG_ROUTES.catalogCategory(link.id)}
+                >
+                  {link.categoryName}
+                </Link>
               </li>
             ))
           }
