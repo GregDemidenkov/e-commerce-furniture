@@ -12,5 +12,9 @@ export class CategoryDao {
     async getAll(): Promise<Category[]> {
       return this.categoryModel.find().exec()
     }
+
+    async findById(id: string): Promise<Category> {
+      return this.categoryModel.findById(id).exec()
+    }
     
 }
