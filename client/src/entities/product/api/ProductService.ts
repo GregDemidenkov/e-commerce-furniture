@@ -34,7 +34,7 @@ class ProductService {
     if (isServer) {
       return serverApiFetch(`${this.productUrl}/all${queryString}`);
     }
-
+    console.log(`${this.productUrl}/all${queryString}`)
     return axiosApi.get(`${this.productUrl}/all${queryString}`);
   }
 

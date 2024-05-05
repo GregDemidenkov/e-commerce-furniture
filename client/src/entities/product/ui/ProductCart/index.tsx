@@ -1,10 +1,12 @@
+'use client';
+
 import Link from "next/link";
 
 import styles from './styles.module.scss';
 import { Button, SVG } from "@/shared/ui";
 import { Product } from "../../model/types";
 import { formatPrice } from "@/shared/utils/misc";
-import { CATALOG_ROUTES } from "@/shared/routes";
+import { AUTH_ROUTES, CATALOG_ROUTES } from "@/shared/routes";
 import { useAppSelector } from "@/shared/utils/storeHooks";
 
 export const ProductCart = ({
@@ -38,7 +40,7 @@ export const ProductCart = ({
             В корзину
           </Button>
         </div>
-        : <p><Link href={config.login}>Войдите</Link> в профиль, чтобы добавить товар в корзину</p>
+        : <div className={styles.signInBlock}><Link href={AUTH_ROUTES.signIn}>Войдите</Link> <span>в профиль, чтобы добавить товар в корзину</span></div>
       }
     </Link>
   );

@@ -29,6 +29,11 @@
     font-size: 20px;
     font-weight: 400;
     color: colors.$black;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 
   &_buttons {
@@ -48,6 +53,18 @@
 
     button {
       width: 100%;
+    }
+  }
+
+  .signInBlock {
+    background-color: colors.$gray-lightest;
+    padding: 6px 12px;
+    border-radius: 8px;
+    border: 1px solid colors.$blue-light;
+    font-size: 16px;
+
+    span {
+      color: colors.$black;
     }
   }
 }

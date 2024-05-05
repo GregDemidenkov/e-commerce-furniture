@@ -6,3 +6,10 @@ export const categorySerialize = (data: any): Category[] => {
     categoryName: item.category_name
   })) as Category[];
 }
+
+export const categoryElSerialize = (data: any): Category => {
+  return {
+    id: data._id,
+    categoryName: data.category_name
+  } as Category;
+}
