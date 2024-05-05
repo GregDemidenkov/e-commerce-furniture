@@ -8,6 +8,8 @@ import { AuthModule } from './modules/auth.module';
 import { UserModule } from './modules/user.module';
 import { CategoriesModule } from './modules/category.module';
 import { ProductsModule } from './modules/product.module';
+import { ProductOrderModule } from './modules/productOrder.module';
+import { UserOrderModule } from './modules/userOrder.module';
 
 
 @Module({
@@ -27,7 +29,9 @@ import { ProductsModule } from './modules/product.module';
         AuthModule,
         UserModule,
         CategoriesModule,
-        ProductsModule
+        ProductsModule,
+        UserOrderModule,
+        ProductOrderModule,
     ]
 })
 
