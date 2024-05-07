@@ -8,11 +8,14 @@ import { Product } from "../../model/types";
 import { formatPrice } from "@/shared/utils/misc";
 import { AUTH_ROUTES, CATALOG_ROUTES } from "@/shared/routes";
 import { useAppSelector } from "@/shared/utils/storeHooks";
+import { ReactNode } from "react";
 
-export const ProductCart = ({
-  product
+export const ProductCard = ({
+  product,
+  cartController,
 }: {
-  product: Product
+  product: Product,
+  cartController: ReactNode
 }) => {
 
   const { isAuth } = useAppSelector(
@@ -33,12 +36,15 @@ export const ProductCart = ({
         isAuth ?
         <div className={styles.productCart_buttons}>
           <SVG type="heart"/>
-          <Button
+          {/* <Button
             type="button"
             style="fill"
           >
             В корзину
-          </Button>
+          </Button> */}
+          {
+            cartController
+          }
         </div>
         : <div className={styles.signInBlock}><Link href={AUTH_ROUTES.signIn}>Войдите</Link> <span>в профиль, чтобы добавить товар в корзину</span></div>
       }

@@ -8,7 +8,7 @@ import styles from './style.module.scss';
 type ButtonProps = {
   style: 'fill' | 'bordered',
   type: 'button' | 'submit',
-  onClick?: () => void,
+  onClick?: (e: any) => void,
   children: ReactNode,
   className?: string
 }

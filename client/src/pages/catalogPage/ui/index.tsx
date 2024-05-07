@@ -2,15 +2,18 @@
 
 import { useEffect } from "react";
 
-import { Product, ProductCart } from "@/entities/product";
+import { CatalogFilter } from "@/features/catalogFilter";
+import { Product, ProductCard } from "@/entities/product";
 import { Category } from "@/entities/category";
 import { setProducts, setSortParams } from "@/entities/product/model/slice";
+import { clearActiveProducts } from "@/entities/order/model/slice";
+import { getActiveProducts } from "@/entities/order/model/actions";
+import { ProductCartController } from "@/features/productCartController";
 import { useAppDispatch, useAppSelector } from "@/shared/utils/storeHooks";
 import { Container } from "@/shared/ui";
+import { EmptyStub } from "./EmptyStub";
 
 import styles from './styles.module.scss';
-import { CatalogFilter } from "@/features/catalogFilter";
-import { EmptyStub } from "./EmptyStub";
 
 export const CatalogPage = ({
   initialProducts,
@@ -20,9 +23,11 @@ export const CatalogPage = ({
   category: Category | null
 }) => {
   const dispatch = useAppDispatch();
+  const { isAuth, user } = useAppSelector(state => state.auth)
   const { products } = useAppSelector(
     (state) => state.product
   );
+  const { activeProducts } = useAppSelector(state => state.order)
   
   useEffect(() => {
     dispatch(setProducts(initialProducts));
@@ -31,6 +36,13 @@ export const CatalogPage = ({
       sort: 'default'
     }));
   }, [initialProducts])
+
+  useEffect(() => {
+    dispatch(clearActiveProducts())
+    if(isAuth) {
+        dispatch(getActiveProducts(user.id))
+    }
+  }, [isAuth])
 
   return (
     <section className={styles.section}>
@@ -51,8 +63,12 @@ export const CatalogPage = ({
               {
                 products.map((pr: Product) => (
                   <li key={pr.id}>
-                    <ProductCart 
+                    <ProductCard 
                       product={pr}
+                      cartController={<ProductCartController
+                        method={!activeProducts.includes(pr.id) ? 'add' : 'delete'}
+                        productId={pr.id}
+                      />}
                     />
                   </li>
                 ))

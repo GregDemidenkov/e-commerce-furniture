@@ -1,10 +1,29 @@
+'use client';
+
+import { useEffect } from "react";
+
 import { ProductControllerBlock } from "@/widgets/productController";
+import { ProductCartController } from "@/features/productCartController";
 import { Product } from "@/entities/product";
+import { clearActiveProducts } from "@/entities/order/model/slice";
+import { getActiveProducts } from "@/entities/order/model/actions";
+import { useAppDispatch, useAppSelector } from "@/shared/utils/storeHooks";
 import { Container } from "@/shared/ui";
 
 import styles from './styles.module.scss';
 
 export const ProductPage = ({data}: {data: Product}) => {
+  const dispatch = useAppDispatch();
+  const { isAuth, user } = useAppSelector(state => state.auth)
+  const { activeProducts } = useAppSelector(state => state.order)
+
+  useEffect(() => {
+    dispatch(clearActiveProducts())
+    if(isAuth) {
+        dispatch(getActiveProducts(user.id))
+    }
+  }, [isAuth])
+
   const optionsList = [
     {label: "Цвет", value: data.color},
     {label: "Размер", value: data.size},
@@ -37,6 +56,10 @@ export const ProductPage = ({data}: {data: Product}) => {
                 price: data.price,
                 count: data.count
               }}
+              cartController={<ProductCartController
+                method={!activeProducts.includes(data.id) ? 'add' : 'delete'}
+                productId={data.id}
+              />}
             />
           </div>
 
