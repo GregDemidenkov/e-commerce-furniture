@@ -109,7 +109,7 @@ export class ProductOrderService {
     }
 
     async deleteProductOrder(dto: IdDto) {
-        const deletedProductOrder = await this.productOrderDao.deleteById(dto.id)
+        const deletedProductOrder = await this.productOrderDao.deleteByProductId(dto.id)
 
         const changeProductOrderDto: ChangeProductOrderDto = {
             userOrderId: deletedProductOrder.user_order_id,

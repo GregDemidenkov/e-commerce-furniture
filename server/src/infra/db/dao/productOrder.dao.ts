@@ -51,6 +51,10 @@ export class ProductOrderDao {
         return this.productOrderModel.findByIdAndDelete(id)
     }
 
+    async deleteByProductId(id: string) {
+        return this.productOrderModel.findOneAndDelete({product_id: id});
+    }
+
     async deleteManyByUserOrderId(id: string) {
         return this.productOrderModel.deleteMany({user_order_id: id})
     }
