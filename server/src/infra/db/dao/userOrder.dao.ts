@@ -43,7 +43,7 @@ export class UserOrderDao {
             userOrder.products.push(dto.productOrderId)
             userOrder.check += dto.fullPrice
         } else {
-            userOrder.products = userOrder.products.filter(id => id != dto.productOrderId)
+            userOrder.products = userOrder.products.filter(id => id?.toString() != dto.productOrderId?.toString())
             userOrder.check -= dto.fullPrice
         }
 

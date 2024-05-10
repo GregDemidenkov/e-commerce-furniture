@@ -113,7 +113,7 @@ export class ProductOrderService {
 
         const changeProductOrderDto: ChangeProductOrderDto = {
             userOrderId: deletedProductOrder.user_order_id,
-            productOrderId: dto.id,
+            productOrderId: deletedProductOrder._id,
             fullPrice: deletedProductOrder.full_price,
             action: "delete"
         }
@@ -121,7 +121,7 @@ export class ProductOrderService {
         const updatedUserOrder = await this.userOrderDao.changeProductOrderId(changeProductOrderDto)
 
         if(updatedUserOrder.products.length === 0) {
-            await this.userOrderDao.deleteById(updatedUserOrder.id)
+            await this.userOrderDao.deleteById(updatedUserOrder._id)
         }
     }
     
