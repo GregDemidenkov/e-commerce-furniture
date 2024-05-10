@@ -1,0 +1,19 @@
+@use '@styles/colors';
+@use '@styles/vars';
+
+.cartFooter {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 64px;
+
+  p {
+    font-size: 28px;
+    font-weight: 500;
+
+    span {
+      color: colors.$blue;
+      font-weight: 600;
+    }
+  }
+}

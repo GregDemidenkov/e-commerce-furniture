@@ -1,16 +1,16 @@
 import { Product } from "@/entities/product"
 
 export type ProductOrder = {
-    _id: string,
-    user_order_id: string,
-    product_id: Product,
+    id: string,
+    userOrderId: string,
+    product: Product,
     count: number,
-    full_price: number
+    fullPrice: number
 }
 
 export type FullUserOrder = {
-    _id: string,
-    user_id: string,
+    id: string,
+    userId: string,
     products: ProductOrder[],
     check: number,
     status: 'pending' | 'active' | 'closed'

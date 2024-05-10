@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 import { SVG } from '@/shared/ui';
 import { useAppSelector } from '@/shared/utils/storeHooks';
-import { AUTH_ROUTES, PROFILE_ROUTES } from '@/shared/routes';
+import { AUTH_ROUTES, CART_ROOT_PATH, PROFILE_ROUTES } from '@/shared/routes';
 
 import styles from './styles.module.scss';
 
@@ -26,7 +26,9 @@ export const HeaderNavbar = () => {
       </div>
 
       <div className={styles.headerNav_el}>
-        <SVG type='cart'/> <p>Корзина</p>
+        <Link href={isAuth ? CART_ROOT_PATH : AUTH_ROUTES.signIn}>
+          <SVG type='cart'/> <p>Корзина</p>
+        </Link>
       </div>
     </nav>
   );

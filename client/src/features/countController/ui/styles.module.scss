@@ -1,0 +1,29 @@
+@use '@styles/colors';
+@use '@styles/vars';
+
+.countController {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  &_button {
+    background-color: inherit;
+    outline: none;
+    border: 1px solid colors.$blue;
+    border-radius: 4px;
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+
+    svg {
+      width: 16px;
+      height: 16px;
+
+      path { stroke: colors.$blue }
+    }
+  }
+
+  &_count {
+    font-size: 18px;
+  }
+}

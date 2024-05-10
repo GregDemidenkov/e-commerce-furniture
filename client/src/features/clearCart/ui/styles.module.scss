@@ -1,0 +1,22 @@
+@use '@styles/colors';
+@use '@styles/vars';
+
+.clearCart {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: underline dotted colors.$red;
+  cursor: pointer;
+  
+  span {
+    font-size: 20px;
+    color: colors.$red;
+  }
+
+  svg {
+    width: 20px;
+    height: 20px;
+
+    path { stroke: colors.$red; }
+  }
+}

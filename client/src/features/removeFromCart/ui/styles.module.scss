@@ -1,0 +1,16 @@
+@use '@styles/colors';
+@use '@styles/vars';
+
+.removeFromCart {
+  background-color: inherit;
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+  svg {
+    width: 25px;
+    height: 25px;
+    
+    path { stroke: colors.$red };
+  }
+}

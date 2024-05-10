@@ -1,0 +1,52 @@
+@use '@styles/colors';
+@use '@styles/vars';
+
+.card {
+  display: grid;
+  grid-template-columns: 0.7fr 0.3fr;
+  padding: 16px;
+  border-bottom: 1px solid colors.$gray-lightest;
+  
+
+  &_info {
+    display: grid;
+    grid-template-columns: 0.2fr 0.6fr 0.2fr;
+    gap: 16px;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+
+    &__name {
+      font-size: 18px;
+      color: colors.$black;
+
+      br {
+        margin: 8px 0;
+      }
+
+      span {
+        color: colors.$gray-dark;
+      }
+    }
+
+    &__price {
+      font-size: 20px;
+      font-weight: 700;
+      color: colors.$blue;
+    }
+  }
+
+  &_controllers {
+    display: grid;
+    grid-template-columns: 0.5fr 0.3fr 0.2fr;
+    gap: 16px;
+
+    &__price {
+      font-size: 20px;
+      font-weight: 700;
+      color: colors.$blue;
+    }
+  }
+}

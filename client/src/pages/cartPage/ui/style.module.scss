@@ -1,0 +1,26 @@
+@use '@styles/colors';
+@use '@styles/vars';
+
+.section {
+  margin: 64px 0;
+
+  h1 {
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 48px;
+    letter-spacing: 4px;
+    color: colors.$black;
+    font-family: vars.$font-roboto;
+  }
+
+  .cartContent {
+    display: flex;
+    flex-direction: column;
+    row-gap: 32px;
+
+    &_clear {
+      display: flex;
+      justify-content: end;
+    }
+  }
+}

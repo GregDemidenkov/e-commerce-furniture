@@ -1,0 +1,19 @@
+@use '@styles/colors';
+@use '@styles/vars';
+
+.cartBlock {
+  width: 100%;
+  background-color: colors.$white;
+  box-shadow: 1px 4px 10px #BCB8B5;
+  padding: 16px;
+
+  &_list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 32px;
+
+    li {
+      list-style-type: none;
+    }
+  }
+}

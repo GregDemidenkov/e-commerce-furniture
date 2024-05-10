@@ -7,7 +7,7 @@ class UserOrderService {
 
 
     getUserOrder(userId: string) {
-        return protectedAxios.get(`${this.userOrderUrl}/${userId}`)
+        return protectedAxios.get(`${this.userOrderUrl}/${userId}/`)
     }
 
     clearCart(userOrderId: string) {

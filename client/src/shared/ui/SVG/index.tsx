@@ -4,6 +4,9 @@ import HeartSVG from '@public/images/icons/heart.svg';
 import OrderHistorySVG from '@public/images/icons/order-history.svg';
 import SettingsSVG from '@public/images/icons/settings.svg';
 import CatalogSVG from '@public/images/icons/catalog.svg';
+import DeleteSVG from '@public/images/icons/delete.svg';
+import MinusSVG from '@public/images/icons/minus.svg';
+import PlusSVG from '@public/images/icons/plus.svg';
 
 export const SVG = ({ type }: { type: string }) => {
   switch (type) {
@@ -19,6 +22,12 @@ export const SVG = ({ type }: { type: string }) => {
       return <SettingsSVG />;
     case 'catalog':
       return <CatalogSVG />;
+    case 'delete':
+      return <DeleteSVG />;
+    case 'minus':
+      return <MinusSVG />;
+    case 'plus':
+      return <PlusSVG />;
     default:
       return null;
   }

@@ -2,6 +2,7 @@ export const MAIN_PATH = '/';
 export const AUTH_ROOT_PATH = 'auth';
 export const PROFILE_ROOT_PATH = 'profile';
 export const CATALOG_ROOT_PATH = 'catalog';
+export const CART_ROOT_PATH = '/cart';
 
 export const AUTH_ROUTES = {
   signIn: `/${AUTH_ROOT_PATH}/sign-in`,
