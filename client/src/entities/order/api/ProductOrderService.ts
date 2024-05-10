@@ -1,5 +1,5 @@
 import protectedAxios from "@/shared/api/config/axios"
-import { AddProductOrderDto } from "../model/types"
+import { AddProductOrderDto, ChangeCountProductOrderDto } from "../model/types"
 
 
 class ProductOrderService {
@@ -13,6 +13,15 @@ class ProductOrderService {
 
     deleteFromCart(productId: string) {
         return protectedAxios.delete(`${this.productOrderUrl}/${productId}`)
+    }
+
+    changeCountProductOrder(dto: ChangeCountProductOrderDto) {
+        return protectedAxios.patch(`${this.productOrderUrl}/update-count`, {
+            userOrderId: dto.userOrderId,
+            productOrderId: dto.productOrderId,
+            count: dto.count,
+            action: dto.action
+        })
     }
 }
 

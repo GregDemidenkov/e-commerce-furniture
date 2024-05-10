@@ -28,7 +28,11 @@ export const CartBlock = ({
                   userId={user.id}
                   productId={prOrder.product.id}
                 />}
-                countController={<CountController />}
+                countController={<CountController
+                  count={prOrder.count}
+                  maxCount={prOrder.product.count}
+                  productOrderId={prOrder.id}
+                />}
               />
             </li>
           ))

@@ -36,3 +36,11 @@ export type DeleteProductOrderDto = {
     userId: string,
     productId: string
 }
+
+export type ChangeCountProductOrderDto = {
+    userId: string,
+    userOrderId: string,
+    productOrderId: string,
+    count: number,
+    action: "delete" | "add"
+}
