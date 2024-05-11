@@ -1,4 +1,7 @@
+@use '@styles/colors';
+
 .settingsForm {
+  position: relative;
   display: flex;
   flex-direction: column;
   row-gap: 32px;
@@ -12,10 +15,18 @@
   }
 
   &_buttonBlock {
+    display: flex;
+    align-items: center;
+    gap: 32px;
     margin-top: 24px;
 
     .settingsButton {
       padding: 16px 32px;
     }
   }
+}
+
+.successMessage {
+  font-size: 20px;
+  color: colors.$success;
 }

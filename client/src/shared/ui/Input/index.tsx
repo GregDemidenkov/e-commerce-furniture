@@ -69,6 +69,7 @@ export const Input: FC<InputProps> = ({
             )}
           />
         }
+        <p className={styles.errorColumn}>{error}</p>
       </div>
     );
   }

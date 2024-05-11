@@ -3,6 +3,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { removeCookie, setCookie } from "@/shared/utils/cookie";
 import { AuthResponse, LoginResponse, Message, User } from "./types";
 import { auth, login, registration } from "./actions";
+import { userSerializer } from "./serializer";
 
 
 interface AuthState {
@@ -32,6 +33,9 @@ const authSlice = createSlice({
         },
         clearMessage(state) {
             state.message = {type: null, text: ''};
+        },
+        setUser(state, action: PayloadAction<any>) {
+            state.user = userSerializer(action.payload)
         }
     },
     extraReducers: (builder) => {
@@ -72,7 +76,7 @@ const authSlice = createSlice({
         })
         builder.addCase(auth.fulfilled, (state, action: PayloadAction<AuthResponse>) => {
             state.isLoading = false;
-            state.user = action.payload.user;
+            state.user = userSerializer(action.payload.user);
             setCookie('accessToken', action.payload.accessToken);
             state.isAuth = true;
         })
@@ -83,6 +87,6 @@ const authSlice = createSlice({
 });
 
 
-export const { logout, clearMessage } = authSlice.actions;
+export const { logout, clearMessage, setUser } = authSlice.actions;
 
 export default authSlice.reducer;
