@@ -28,6 +28,9 @@ export const BaseLayout = ({
 
   return (
     <html lang="ru">
+      <head>
+        <script src="https://widget.cloudpayments.ru/bundles/cloudpayments.js"></script>
+      </head>
       <body className={clsx(Inter.variable, Lora.variable, Esti.variable, Roboto.variable, styles.body)}>
         { header }
 

@@ -16,7 +16,7 @@ import { EmptyStub } from './EmptyStub';
 
 export const CartPage = () => {
   const dispatch = useAppDispatch();
-  const { isAuth, user } = useAppSelector(state => state.auth);
+  const { user } = useAppSelector(state => state.auth);
   const { userOrder, productOrders } = useAppSelector(state => state.order);
 
   useEffect(() => {
