@@ -17,6 +17,9 @@ export class UserOrder {
 
     @Prop({default: 'pending'})
     status: 'pending' | 'active' |'closed'
+
+    @Prop({ type: mongoose.Schema.Types.ObjectId, ref: 'Transaction', default: null })
+    transaction_id: string | null
 }
 
 export const UserOrderModel = SchemaFactory.createForClass(UserOrder)
