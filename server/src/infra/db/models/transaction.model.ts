@@ -4,7 +4,7 @@ import mongoose, { Document } from "mongoose"
 
 export type TransactionDocument = Transaction & Document
 
-@Schema({ collection: 'user_orders' })
+@Schema({ collection: 'transactions' })
 export class Transaction {
     @Prop({ type: mongoose.Schema.Types.ObjectId, ref: 'User' })
     user_id: string
@@ -19,4 +19,4 @@ export class Transaction {
     currency: 'RUB'
 }
 
-export const TransactionrModel = SchemaFactory.createForClass(Transaction)
+export const TransactionModel = SchemaFactory.createForClass(Transaction)

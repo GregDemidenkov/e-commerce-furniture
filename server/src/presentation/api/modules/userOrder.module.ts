@@ -11,8 +11,11 @@ import { ProductDao } from "src/infra/db/dao/product.dao"
 import { UserOrder, UserOrderModel } from "src/infra/db/models/user-order.model"
 import { ProductOrder, ProductOrderModel } from "src/infra/db/models/product-order.model"
 import { Product, ProductModel } from "src/infra/db/models/product.model"
+import { TransactionModel } from "src/infra/db/models/transaction.model";
 
 import { AuthMiddleware } from "../middleware/auth/auth.middleware"
+import { Transaction } from "src/infra/db/models/transaction.model"
+import { TransactionDao } from "src/infra/db/dao/transaction.dao"
 
 
 @Module({
@@ -21,9 +24,10 @@ import { AuthMiddleware } from "../middleware/auth/auth.middleware"
             {name: UserOrder.name, schema: UserOrderModel},
             {name: ProductOrder.name, schema: ProductOrderModel},
             {name: Product.name, schema: ProductModel},
+            {name: Transaction.name, schema: TransactionModel},
         ])
     ],
-    providers: [UserOrderService, UserOrderDao, ProductOrderDao, ProductDao],
+    providers: [UserOrderService, UserOrderDao, ProductOrderDao, ProductDao, TransactionDao],
     controllers: [UserOrderController]
 })
 

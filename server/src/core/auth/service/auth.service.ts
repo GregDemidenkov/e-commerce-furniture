@@ -49,7 +49,7 @@ export class AuthService {
             throw new InvalidPassword("Неверный пароль")
         }
 
-        const accessToken = jwt.sign({id: user._id}, process.env.JWT_SECRET, {expiresIn: "10m"})
+        const accessToken = jwt.sign({id: user._id}, process.env.JWT_SECRET, {expiresIn: "1h"})
         const refreshToken = jwt.sign({id: user._id}, process.env.JWT_SECRET, {expiresIn: "30d"})
 
         return {

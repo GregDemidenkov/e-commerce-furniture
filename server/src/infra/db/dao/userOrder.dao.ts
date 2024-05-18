@@ -32,6 +32,24 @@ export class UserOrderDao {
         }).exec();
     }
 
+    async getOrderByUserIdAndStatus(id: string, status: 'active' | 'closed') {
+        return this.userOrderModel
+        .find({ user_id: id, status: status })
+        .populate({
+            path: 'products',
+            populate: [
+                {
+                    path: 'product_id',
+                    populate: {
+                        path: 'category'
+                    }
+                }
+            ]
+        })
+        .populate('transaction_id')
+        .exec();
+    }
+
     async getOrderById(id: string): Promise<UserOrderDocument> {
         return this.userOrderModel.findOne({_id: id, status: "pending"})
     }
@@ -66,6 +84,10 @@ export class UserOrderDao {
         }
 
         await userOrder.save()
+    }
+
+    async updateUserOrder(id: string, status: any, transaction_id: string): Promise<UserOrderDocument> {
+        return this.userOrderModel.findByIdAndUpdate(id, {status: status, transaction_id: transaction_id}, {new: true})
     }
 
     async deleteById(id: string) {
