@@ -1,4 +1,5 @@
 import protectedAxios from "@/shared/api/config/axios"
+import { CheckoutDto } from "../model/types"
 
 
 class UserOrderService {
@@ -14,8 +15,8 @@ class UserOrderService {
         return protectedAxios.delete(`${this.userOrderUrl}/${userOrderId}`)
     }
 
-    checkout(userOrderId: string) {
-        return protectedAxios.patch(`${this.userOrderUrl}/${userOrderId}`)
+    checkout(dto: CheckoutDto) {
+        return protectedAxios.patch(`${this.userOrderUrl}/checkout/create/`, dto)
     }
 }
 

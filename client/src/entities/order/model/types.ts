@@ -44,3 +44,8 @@ export type ChangeCountProductOrderDto = {
     count: number,
     action: "delete" | "add"
 }
+
+export type CheckoutDto = {
+    userOrderId: string,
+    amount: number
+  }

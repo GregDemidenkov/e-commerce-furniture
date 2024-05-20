@@ -30,6 +30,7 @@ const OrderSlice = createSlice({
         clearState(state) {
             state.productOrders = []
             state.userOrderId = ""
+            state.userOrder = null
         },
         clearActiveProducts(state) {
           state.activeProducts = []
