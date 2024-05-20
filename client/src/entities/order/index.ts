@@ -4,6 +4,7 @@ export type {
   AddProductOrderDto,
   DeleteProductOrderDto,
   ChangeCountProductOrderDto,
-  CheckoutDto
+  CheckoutDto,
+  UserOrders
 } from './model/types';
 export { ProductOrderCard } from './ui/ProductOrderCard';

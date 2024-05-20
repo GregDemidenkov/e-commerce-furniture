@@ -1,4 +1,4 @@
-import { FullUserOrder, ProductOrder } from "@/entities/order"
+import { FullUserOrder, ProductOrder, UserOrders } from "@/entities/order"
 import { productSerialize } from "@/entities/product"
 
 export const productOrderSerialize = (data: any): ProductOrder => {
@@ -17,6 +17,14 @@ export const userOrderSerialize = (data: any): FullUserOrder => {
     check: data.check,
     products: data.products.map((pr: any) => productOrderSerialize(pr)),
     status: data.status,
-    userId: data.user_id
+    userId: data.user_id,
+    transactionId: data.transaction_id
   } as FullUserOrder;
+}
+
+export const userOrdersSerializer = (data: any) => {
+  return {
+    active: data.active.map((uO: any) => userOrderSerialize(uO)),
+    closed: data.closed.map((uO: any) => userOrderSerialize(uO))
+  } as UserOrders;
 }

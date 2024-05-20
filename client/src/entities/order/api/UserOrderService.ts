@@ -18,6 +18,10 @@ class UserOrderService {
     checkout(dto: CheckoutDto) {
         return protectedAxios.patch(`${this.userOrderUrl}/checkout/create/`, dto)
     }
+
+    getUserOrders(id: string) {
+        return protectedAxios.get(`${this.userOrderUrl}/${id}/orders/`)
+    }
 }
 
 

@@ -1,0 +1,25 @@
+@use '@styles/colors';
+@use '@styles/vars';
+
+.order {
+  display: flex;
+  justify-content: space-between;
+  gap: 64px;
+  padding: 24px;
+  background-color: colors.$white;
+  border: 1px solid colors.$gray-dark;
+  border-radius: 8px;
+
+  p {
+    display: inline-block;
+  }
+
+  &_number {
+    font-weight: 700;
+  }
+
+  &_check {
+    font-weight: 700;
+    color: colors.$blue;
+  }
+}

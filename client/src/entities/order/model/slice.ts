@@ -1,8 +1,9 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 
-import { FullUserOrder, ProductOrder } from "./types"
+import { FullUserOrder, ProductOrder, UserOrders } from "./types"
 import { getActiveProducts } from "./actions"
 import { getUserOrder } from "@/pages/cartPage/model/actions"
+import { getUserOrders } from "@/pages/orderHistory/model/actions"
 
 
 interface OrderState {
@@ -11,6 +12,8 @@ interface OrderState {
     productOrders: ProductOrder[],
     activeProducts: string[],
     check: number,
+    activeUserOrder: FullUserOrder[],
+    closedUserOrder: FullUserOrder[],
     isLoading: boolean
 }
 
@@ -20,6 +23,8 @@ const initialState: OrderState = {
     productOrders: [],
     activeProducts: [],
     check: 0,
+    activeUserOrder: [],
+    closedUserOrder: [],
     isLoading: false
 }
 
@@ -58,6 +63,18 @@ const OrderSlice = createSlice({
       })
       builder.addCase(getUserOrder.rejected, (state) => {
           state.isLoading = false
+      })
+
+      builder.addCase(getUserOrders.pending, (state) => {
+        state.isLoading = true
+      })
+      builder.addCase(getUserOrders.fulfilled, (state, action: PayloadAction<UserOrders>) => {
+        state.isLoading = false
+        state.activeUserOrder = action.payload.active;
+        state.closedUserOrder = action.payload.closed;
+      })
+      builder.addCase(getUserOrders.rejected, (state) => {
+        state.isLoading = false
       })
     },
 })

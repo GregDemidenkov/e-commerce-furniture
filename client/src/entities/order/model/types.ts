@@ -8,12 +8,18 @@ export type ProductOrder = {
     fullPrice: number
 }
 
+export type Transaction = {
+    amount: number,
+    currency: 'RUB'
+}
+
 export type FullUserOrder = {
     id: string,
     userId: string,
     products: ProductOrder[],
     check: number,
     status: 'pending' | 'active' | 'closed'
+    transactionId: null | Transaction
 }
 
 export type UserOrder = {
@@ -48,4 +54,9 @@ export type ChangeCountProductOrderDto = {
 export type CheckoutDto = {
     userOrderId: string,
     amount: number
-  }
+}
+
+export type UserOrders = {
+    active: FullUserOrder[],
+    closed: FullUserOrder[]
+}
