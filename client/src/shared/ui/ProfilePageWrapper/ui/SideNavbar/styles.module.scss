@@ -36,7 +36,7 @@
     &__link {
       list-style: none;
 
-      a {
+      a, div {
         display: flex;
         justify-content: left;
         align-items: center;
@@ -44,6 +44,7 @@
         height: 100%;
         padding: 2rem;
         color: colors.$black;
+        cursor: pointer;
 
         svg {
           width: 30px;

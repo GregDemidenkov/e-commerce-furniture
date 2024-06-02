@@ -8,6 +8,9 @@ import { SVG } from '../../../SVG';
 import navData from '../../model/navData';
 
 import styles from './styles.module.scss';
+import { removeCookie } from '@/shared/utils/cookie';
+import redirectTo from '@/shared/utils/redirect';
+import { MAIN_PATH } from '@/shared/routes';
 
 export const SideNavbar = ({contentRef}: {contentRef: any}) => {
   const [width, setWidth] = useState(0);
@@ -55,6 +58,15 @@ export const SideNavbar = ({contentRef}: {contentRef: any}) => {
               </li>
             ))
           }
+          <li
+            className={clsx(
+              styles.nav_links__link,
+            )}
+          >
+            <div onClick={() => {removeCookie('accessToken'); redirectTo(MAIN_PATH)}}>
+              <SVG type={'logout'}/> <span>Выйти</span>
+            </div>
+          </li>
         </ul>
       </nav>
     </aside>

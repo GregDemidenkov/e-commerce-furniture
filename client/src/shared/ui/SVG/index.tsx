@@ -7,6 +7,7 @@ import CatalogSVG from '@public/images/icons/catalog.svg';
 import DeleteSVG from '@public/images/icons/delete.svg';
 import MinusSVG from '@public/images/icons/minus.svg';
 import PlusSVG from '@public/images/icons/plus.svg';
+import LogoutSVG from '@public/images/icons/logout.svg';
 
 export const SVG = ({ type }: { type: string }) => {
   switch (type) {
@@ -28,6 +29,8 @@ export const SVG = ({ type }: { type: string }) => {
       return <MinusSVG />;
     case 'plus':
       return <PlusSVG />;
+    case 'logout':
+      return <LogoutSVG />;
     default:
       return null;
   }
