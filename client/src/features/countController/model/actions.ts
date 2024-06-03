@@ -1,6 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit"
 
-import { getUserOrder } from "@/pages/cartPage/model/actions"
+import { getUserOrder } from "@/views/cartPage/model/actions"
 import { ChangeCountProductOrderDto } from "@/entities/order"
 import ProductOrderService from "@/entities/order/api/ProductOrderService"
 

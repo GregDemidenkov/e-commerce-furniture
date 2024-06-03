@@ -2,8 +2,8 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 
 import { FullUserOrder, ProductOrder, UserOrders } from "./types"
 import { getActiveProducts } from "./actions"
-import { getUserOrder } from "@/pages/cartPage/model/actions"
-import { getUserOrders } from "@/pages/orderHistory/model/actions"
+import { getUserOrder } from "@/views/cartPage/model/actions"
+import { getUserOrders } from "@/views/orderHistory/model/actions"
 
 
 interface OrderState {

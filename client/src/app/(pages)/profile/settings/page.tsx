@@ -1,4 +1,4 @@
-import { SettingsPage } from "@/pages/settings";
+import { SettingsPage } from "@/views/settings";
 
 export default function Settings() {
   return (

@@ -73,7 +73,7 @@ export const ProductPage = ({data}: {data: Product}) => {
             <div className={styles.productPageContent_down__options}>
               {
                 optionsList.map((opt) => (
-                  <p><b>{opt.label}:</b> {opt.value}</p>
+                  <p key={opt.label}><b>{opt.label}:</b> {opt.value}</p>
                 ))
               }
             </div>

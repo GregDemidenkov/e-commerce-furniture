@@ -1,4 +1,4 @@
-import { CatalogPage } from "@/pages/catalogPage";
+import { CatalogPage } from "@/views/catalogPage";
 import { Product, productsSerialize } from "@/entities/product";
 import ProductService from "@/entities/product/api/ProductService";
 import CategoryService from "@/entities/category/api/CategoryService";

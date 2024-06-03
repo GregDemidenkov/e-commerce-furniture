@@ -8,6 +8,7 @@ import styles from './style.module.scss';
 import { useAppDispatch } from "@/shared/utils/storeHooks";
 import { getCookie } from "@/shared/utils/cookie";
 import { auth } from "@/entities/auth";
+import Script from "next/script";
 
 export const BaseLayout = ({
   header,
@@ -29,7 +30,10 @@ export const BaseLayout = ({
   return (
     <html lang="ru">
       <head>
-        <script src="https://widget.cloudpayments.ru/bundles/cloudpayments.js"></script>
+        <Script
+          src="https://widget.cloudpayments.ru/bundles/cloudpayments.js"
+          strategy="beforeInteractive"
+        />
       </head>
       <body className={clsx(Inter.variable, Lora.variable, Esti.variable, Roboto.variable, styles.body)}>
         { header }

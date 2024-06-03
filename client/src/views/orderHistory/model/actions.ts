@@ -1,7 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
 import UserOrderService from "@/entities/order/api/UserOrderService";
-import { userOrdersSerializer } from "@/pages/cartPage/model/serializer";
+import { userOrdersSerializer } from "@/views/cartPage/model/serializer";
 import { UserOrders } from "@/entities/order";
 
 export const getUserOrders = createAsyncThunk<UserOrders, string>(

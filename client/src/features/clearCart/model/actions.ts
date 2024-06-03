@@ -1,5 +1,5 @@
 import UserOrderService from "@/entities/order/api/UserOrderService";
-import { getUserOrder } from "@/pages/cartPage/model/actions";
+import { getUserOrder } from "@/views/cartPage/model/actions";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { ClearCartDto } from "./types";
 

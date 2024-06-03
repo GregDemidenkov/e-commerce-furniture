@@ -1,4 +1,4 @@
-import { CartPage } from "@/pages/cartPage";
+import { CartPage } from "@/views/cartPage";
 
 export default function Catalog() {
   return (

@@ -1,4 +1,4 @@
-import { FavoritePage } from "@/pages/favorite";
+import { FavoritePage } from "@/views/favorite";
 
 export default function Favorite() {
   return (

@@ -34,9 +34,12 @@ export const SideNavbar = ({contentRef}: {contentRef: any}) => {
   }, []);
 
   const isActiveLink = (path: string) => {
-    return location.pathname === path;
+    if (typeof window !== 'undefined' && typeof location !== 'undefined') {
+      return location.pathname === path;
+    }
+    return false;
   };
-  console.log(1)
+
   return (
     <aside className={styles.sideNavbar} style={{width: width}}>
       <nav className={styles.nav}>
